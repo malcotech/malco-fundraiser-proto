@@ -1,9 +1,32 @@
 // TODO: Enable and add Bootstrap Config/Overrides here
 // @import "./config.scss";
+// $enable-negative-margins: true;
 
 // Main Bootstrap Import
 @import "~bootstrap/scss/bootstrap";
 
-h1 {
-  color: red
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+$gray: gray;
+$light-gray: lightgray;
+
+
+/* ==========================================================================
+   UTILITIES:
+   TODO: Plan.. and add this to its own SCSS File.
+   ========================================================================== */
+
+.bg-light-gray {
+   background: rgba($light-gray, 1);
+}
+
+// TODO: Add bg-gray-(100|200|300 ... 900) on a need to basis.
+.bg-gray-800 {
+  background: rgba($gray, .8);
+}
+.bg-gray-600 {
+   background: rgba($gray, .6);
 }
