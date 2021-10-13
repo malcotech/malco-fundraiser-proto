@@ -1,0 +1,9 @@
+// TODO: Enable and add Bootstrap Config/Overrides here
+// @import "./config.scss";
+
+// Main Bootstrap Import
+@import "~bootstrap/scss/bootstrap";
+
+h1 {
+  color: red
+}
