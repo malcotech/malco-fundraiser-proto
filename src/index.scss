@@ -19,6 +19,10 @@ $light-gray: lightgray;
    TODO: Plan.. and add this to its own SCSS File.
    ========================================================================== */
 
+.c-pointer {
+  cursor: pointer;
+}
+
 .bg-light-gray {
    background: rgba($light-gray, 1);
 }
