@@ -12,7 +12,7 @@ const venue = 'The Mocha Cup'; // What is a cool name??
 
 function App() {
   return (
-    <main className="sticky">
+    <main>
       {/* Banner Component */}
       <section id="main-hero" className="bg-gray-800">
         <div className="container">
