@@ -27,7 +27,10 @@ $light-gray: lightgray;
    background: rgba($light-gray, 1);
 }
 
-// TODO: Add bg-gray-(100|200|300 ... 900) on a need to basis.
+// TODO: Add bg-gray-(200|300 ... 900) on a need to basis.
+.bg-gray-100 {
+  background: rgba($gray, .1);
+}
 .bg-gray-800 {
   background: rgba($gray, .8);
 }

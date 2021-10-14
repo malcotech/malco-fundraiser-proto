@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addDoner } from './donorSlice';
 
 export default function Donate() {
-  const delaySimulation = 3000;
+  const delaySimulation = 1500;
   const dispatch = useDispatch();
 
   function onDonate(e) {
@@ -15,6 +15,7 @@ export default function Donate() {
     // TODO: Look into best practices on how to target specific elements in React.
     const firstName = target.querySelector('#inputFirstName');
     const lastName = target.querySelector('#inputLastName');
+    const message = target.querySelector('#inputMessage');
 
     // TODO: Improve Form Validation, Something to try:
     // 1. Make it Dynamic, collect all Necessary fields
@@ -42,7 +43,7 @@ export default function Donate() {
           dispatch(addDoner({
             name: `${firstName.value} ${lastName.value}`,
             amount: 500.00,
-            message: 'Add Message here'
+            message: message.value
           }));
 
           submit.disabled = false;
@@ -54,7 +55,6 @@ export default function Donate() {
 
   return (
     <section>
-
       <form className="row g-3" onSubmit={onDonate}>
         <div className="col-sm-6">
           {/* TODO: Sanitize Input */}
@@ -68,15 +68,15 @@ export default function Donate() {
         </div>
         <div className="col-md-6">
           <label htmlFor="inputCreditCard" className="form-label fw-bold">Credit/Debit Card Number</label>
-          <input type="text" className="form-control" id="inputCreditCard" disabled />
+          <input type="text" className="form-control" id="inputCreditCard" title="Disabled, just a Test" disabled />
         </div>
         <div className="col-6 col-md-3">
           <label htmlFor="inputExpiration" className="form-label fw-bold">Card Expiration</label>
-          <input type="text" className="form-control" id="inputExpiration" disabled />
+          <input type="text" className="form-control" id="inputExpiration" title="Disabled, just a Test" disabled />
         </div>
         <div className="col-6 col-md-3">
           <label htmlFor="inputCVC" className="form-label fw-bold">CVC <small className="fw-normal">(security code)</small></label>
-          <input type="text" className="form-control" id="inputCVC" disabled />
+          <input type="text" className="form-control" id="inputCVC" title="Disabled, just a Test" disabled />
         </div>
         <div className="col-md-3">
           {/* TODO: Give End-User ability to add an Amount :-) */}
@@ -85,8 +85,9 @@ export default function Donate() {
         </div>
         <div className="col-md-9">
           {/* TODO: Sanitize Input */}
-          <label htmlFor="inputFirstName" className="form-label fw-bold">Message <small className="fw-normal">(Optional)</small></label>
-          <input type="text" className="form-control" id="inputFirstName" />
+          {/* TODO: Try text area next time */}
+          <label htmlFor="inputMessage" className="form-label fw-bold">Message <small className="fw-normal">(Optional)</small></label>
+          <input type="text" className="form-control" id="inputMessage" />
         </div>
 
         <div className="col-12 text-center text-md-start mt-4">

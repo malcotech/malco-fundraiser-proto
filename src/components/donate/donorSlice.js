@@ -5,8 +5,8 @@ export const slice = createSlice({
   initialState: {
     value: [{
       'name': 'John Doe',
-      'amount': 5,
-      'message': 'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
+      'amount': 2000,
+      'message': 'I am out of town for another week and will not be able to make it :-( ... But thank you everyone for working hard! Here is my support!'
     }],
   },
   reducers: {
