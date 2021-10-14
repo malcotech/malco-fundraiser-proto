@@ -19,7 +19,7 @@ function App() {
           <div className="row align-items-md-center">
             <div className="col-12 col-lg-6 px-0 px-sm-2">
               {/* Source: https://i.picsum.photos/id/1060/5598/3732.jpg */}
-              <img className="img-fluid" src="/img/1060-5598x3732.jpg" alt="Coffee Night with Friends" />
+              <img className="img-fluid" src="./img/1060-5598x3732.jpg" alt="Coffee Night with Friends" />
             </div>
             <div className="col-12 col-lg-6 px-0 px-sm-2">
               <div className="py-4 px-3 px-lg-4">
