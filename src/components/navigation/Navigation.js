@@ -9,8 +9,12 @@ export default function Navigation() {
     const target = e.target;
     const anchorID = target.dataset.anchor;
 
-    // FIXME: This doesn't seem to work smoothly on mobile devices.
-    document.getElementById(anchorID).scrollIntoView({
+    // FIXME: `scrollIntoView()` doesn't seem to work smoothly on mobile devices. Using `scrollTo` as a fallback for now..
+    const position = document.getElementById(anchorID).offsetTop;
+    const spacer = 90;
+    window.scrollTo({
+      left: 0,
+      top: position - spacer,
       behavior: 'smooth'
     });
   }

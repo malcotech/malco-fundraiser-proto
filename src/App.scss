@@ -6,9 +6,9 @@
 }
 
 .anchor-section {
-  scroll-margin-top: 100px;
+  scroll-margin: 100px;
 
   @include media-breakpoint-up(md) {
-    scroll-margin-top: 50px;
+    scroll-margin: 50px;
   }
 }
