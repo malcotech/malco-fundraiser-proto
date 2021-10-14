@@ -34,7 +34,7 @@ export default function Progress() {
     : '$' + progressAmount.toFixed(2);
 
   return (
-    <div className="d-none d-md-flex row align-items-center">
+    <div className="row align-items-center mt-3 mt-md-0">
       <div className="col-auto">
         <p className="fw-bold m-0">Progress: </p>
       </div>
