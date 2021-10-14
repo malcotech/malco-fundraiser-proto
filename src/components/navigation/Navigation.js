@@ -9,6 +9,7 @@ export default function Navigation() {
     const target = e.target;
     const anchorID = target.dataset.anchor;
 
+    // FIXME: This doesn't seem to work smoothly on mobile devices.
     document.getElementById(anchorID).scrollIntoView({
       behavior: 'smooth'
     });
