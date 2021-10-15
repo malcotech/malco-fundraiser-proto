@@ -1,20 +1,30 @@
 import React from "react";
 
+// Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+
 // Components
 import Progress from "../progress/Progress";
 
 export default function Navigation() {
   // TODO: Make this reusable so that the anchoring functionality is not only limited to the navigation.
   function anchorTo(e) {
-    const target = e.target;
+    const target = e.currentTarget;
     const anchorID = target.dataset.anchor;
+    let position = 0;
+
+    if (anchorID !== 'TOP') {
+      const anchorPosition = document.getElementById(anchorID).offsetTop;
+      const spacer = document.getElementById('main-nav').offsetHeight;
+
+      position = anchorPosition - spacer;
+    }
 
     // NOTE: `scrollIntoView()` doesn't seem to work smoothly on mobile devices. Using `scrollTo` for now..
-    const position = document.getElementById(anchorID).offsetTop;
-    const spacer = document.getElementById('main-nav').offsetHeight;
     window.scrollTo({
       left: 0,
-      top: position - spacer,
+      top: position,
       behavior: 'smooth'
     });
   }
@@ -24,6 +34,9 @@ export default function Navigation() {
       <div className="container">
         {/* TODO: Improve UI for mobile, it appears to tight when it gets to some phone sizes. */}
         <div className="row align-items-center">
+          <span className="col-auto c-pointer link-success" onClick={anchorTo} data-anchor="TOP">
+            <FontAwesomeIcon icon={faHome} size="lg" />
+          </span>
           {/* TODO: Make this dynamic */}
           <span className="col-auto c-pointer link-primary" onClick={anchorTo} data-anchor="about">About</span>
           {/*
