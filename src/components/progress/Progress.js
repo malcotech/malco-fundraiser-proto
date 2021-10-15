@@ -30,7 +30,7 @@ export default function Progress() {
     width: `${progressState}%`
   }
   const progressDisplay = (progressAmount >= goal)
-    ? 'Goal Reached! Yey!'
+    ? '$' + `${progressAmount.toFixed(2)} ~ Goal Reached!`
     : '$' + progressAmount.toFixed(2);
 
   return (
