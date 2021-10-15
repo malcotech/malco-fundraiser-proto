@@ -56,7 +56,7 @@ function App() {
         </div>
         {/* Our Supporters */}
         <div id="our-supporters" className="anchor-section bg-gray-100 py-3">
-          <div className="container p-3">
+          <div className="container px-3 py-md-3">
             <h2 className="mb-3">Our Supporters</h2>
             <p className="mb-5">Thanks to our supporters! You're helping our event tremendously! Remember, <b>5</b> randomly picked lucky winners will win a $10 dollar gift card to <strong>Chick-fil-A</strong>! Yuummm!</p>
             <div id="our-supporters">

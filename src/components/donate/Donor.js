@@ -8,6 +8,7 @@ import { addDoner } from './donorSlice';
 export default function Donate() {
   const delaySimulation = 1500;
   const dispatch = useDispatch();
+  const autoCompleteStatus = (!!window.chrome) ? 'none' : 'off'; // autocomplete="off" has issues on Chrome, but any assigned value will?
 
   function onDonate(e) {
     e.preventDefault();
@@ -46,8 +47,12 @@ export default function Donate() {
             message: message.value
           }));
 
-          submit.disabled = false;
+          // Resets:
+          firstName.value = '';
+          lastName.value = '';
+          message.value = '';
           loader.classList.remove('d-flex');
+          submit.disabled = false;
         }, delaySimulation);
       }
     }
@@ -59,12 +64,12 @@ export default function Donate() {
         <div className="col-sm-6">
           {/* TODO: Sanitize Input */}
           <label htmlFor="inputFirstName" className="form-label fw-bold">First Name</label>
-          <input type="text" className="form-control" id="inputFirstName" />
+          <input type="text" className="form-control" id="inputFirstName" autoComplete={autoCompleteStatus} />
         </div>
         <div className="col-sm-6">
           {/* TODO: Sanitize Input */}
           <label htmlFor="inputLastName" className="form-label fw-bold">Last Name</label>
-          <input type="text" className="form-control" id="inputLastName" />
+          <input type="text" className="form-control" id="inputLastName" autoComplete={autoCompleteStatus} />
         </div>
         <div className="col-md-6">
           <label htmlFor="inputCreditCard" className="form-label fw-bold">Credit/Debit Card Number</label>
@@ -87,19 +92,22 @@ export default function Donate() {
           {/* TODO: Sanitize Input */}
           {/* TODO: Try text area next time */}
           <label htmlFor="inputMessage" className="form-label fw-bold">Message <small className="fw-normal">(Optional)</small></label>
-          <input type="text" className="form-control" id="inputMessage" />
+          <input type="text" className="form-control" id="inputMessage" autoComplete={autoCompleteStatus} />
         </div>
 
         <div className="col-12 text-center text-md-start mt-4">
           <div className="row align-items-center">
             <div className="col-auto">
-              <button id="btn-submit" type="submit" className="btn btn-primary btn-lg px-5 user-select-none">Submit</button>
+              <button id="btn-submit" type="submit" className="btn btn-primary btn-lg mb-3 px-5 user-select-none">Submit</button>
             </div>
             {/* TODO: See how progress messages can be handled in React... */}
             <div id="form-loader" className="col align-items-center">
-              <div className="spinner-border text-warning mr-3" role="status"></div>
+              <div>
+                <div className="spinner-border text-warning mr-3" role="status"></div>
+              </div>
               <i className="px-3">Simulating Submission...</i>
             </div>
+            {/* TODO: Add a validation message, useful for mobile users. */}
           </div>
         </div>
       </form>
