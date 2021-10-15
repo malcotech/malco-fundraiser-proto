@@ -9,9 +9,9 @@ export default function Navigation() {
     const target = e.target;
     const anchorID = target.dataset.anchor;
 
-    // FIXME: `scrollIntoView()` doesn't seem to work smoothly on mobile devices. Using `scrollTo` as a fallback for now..
+    // NOTE: `scrollIntoView()` doesn't seem to work smoothly on mobile devices. Using `scrollTo` for now..
     const position = document.getElementById(anchorID).offsetTop;
-    const spacer = 90;
+    const spacer = document.getElementById('main-nav').offsetHeight;
     window.scrollTo({
       left: 0,
       top: position - spacer,
@@ -25,13 +25,13 @@ export default function Navigation() {
         {/* TODO: Improve UI for mobile, it appears to tight when it gets to some phone sizes. */}
         <div className="row align-items-center">
           {/* TODO: Make this dynamic */}
-          <span className="col-auto" onClick={anchorTo} data-anchor="about">About</span>
+          <span className="col-auto c-pointer link-primary" onClick={anchorTo} data-anchor="about">About</span>
           {/*
             TODO: Make a sample Route/Page using this link
             <span className="col-auto">Our Cause</span>
           */}
-          <span className="col-auto" onClick={anchorTo} data-anchor="our-supporters">Supporters</span>
-          <span className="col-auto" onClick={anchorTo} data-anchor="donate">Donate</span>
+          <span className="col-auto c-pointer link-primary" onClick={anchorTo} data-anchor="our-supporters">Supporters</span>
+          <span className="col-auto c-pointer link-primary" onClick={anchorTo} data-anchor="donate">Donate</span>
           <div className="col-md-5 col-md-4 ms-auto">
             <Progress />
           </div>
