@@ -18,7 +18,11 @@ export default function Supporter() {
           <div className="card-body px-4 py-3">
             <h5 className="card-title mb-2">{donor.name}</h5>
             <p className="card-text mb-2"><b>Amount:</b> <span>${formatNumbers(amount, 'addComma')}</span></p>
-            <p className="card-text mb-2"><b>Message:</b> <span>{donor.message}</span></p>
+            {
+              (donor.message.length > 0)
+                ? <p className="card-text mb-2"><b>Message:</b> <span>{donor.message}</span></p>
+                : ''
+            }
           </div>
         </div>
       </div>
