@@ -1,6 +1,6 @@
 {
   "name": "malco-fundraiser-proto",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A sample fundraiser app using React.",
   "main": "index.js",
   "scripts": {
