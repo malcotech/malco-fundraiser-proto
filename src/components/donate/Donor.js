@@ -16,7 +16,10 @@ export default function Donate() {
     // TODO: Look into best practices on how to target specific elements in React.
     const firstName = target.querySelector('#inputFirstName');
     const lastName = target.querySelector('#inputLastName');
+    const amount = target.querySelector('#inputAmount');
     const message = target.querySelector('#inputMessage');
+
+    const validAmount = Number(formatNumbers(amount.value, 'removeComma'));
 
     // TODO: Improve Form Validation, Something to try:
     // 1. Make it Dynamic, collect all Necessary fields
@@ -31,8 +34,13 @@ export default function Donate() {
     } else {
       lastName.classList.remove('is-invalid');
     }
+    if (!!!validAmount) {
+      amount.classList.add('is-invalid');
+    } else {
+      amount.classList.remove('is-invalid');
+    }
 
-    if (firstName.value && lastName.value) {
+    if (firstName.value && lastName.value && !!validAmount) {
       const submit = target.querySelector('#btn-submit');
       const loader = target.querySelector('#form-loader');
 
@@ -43,18 +51,71 @@ export default function Donate() {
         setTimeout(() => {
           dispatch(addDoner({
             name: `${firstName.value} ${lastName.value}`,
-            amount: 500.00,
+            amount: validAmount,
             message: message.value
           }));
 
           // Resets:
           firstName.value = '';
           lastName.value = '';
+          amount.value = '';
           message.value = '';
           loader.classList.remove('d-flex');
           submit.disabled = false;
         }, delaySimulation);
       }
+    }
+  }
+
+  // TODO: move this were it can be reusable.
+  function numberInputOnly(e) {
+    // TODO: Consider RegEx?
+    let allowedKeyCodes = [
+        8,   // Backspace
+        37,  // Arrow - Left
+        39,  // Arrow - Right
+        46,  // Delete - key
+        110, // Period - keypad (NOTE: no key available?)
+        188, // Comma
+        190, // Period
+      ].includes(e.keyCode);
+    const is2ndPeriod = e.key === '.' && e.currentTarget.value.includes(e.key);
+    const isNaN = Number.isNaN(Number(e.key)); //!!!Number(e.key);
+    const isSpace = e.key === ' ';
+
+    // Prevent Key Entry, if Not an allowed key and Not a Number, or is the space key
+    // TODO: Look into some inconsistent key detection
+    if ((!allowedKeyCodes && isNaN) || isSpace || is2ndPeriod) {
+      e.preventDefault();
+    }
+  }
+
+  function amountBlur(e) {
+    e.currentTarget.value = formatNumbers(e.currentTarget.value, 'addComma');
+  }
+
+  function amountFocus(e) {
+    e.currentTarget.value = formatNumbers(e.currentTarget.value, 'removeComma');
+  }
+
+  // TODO: Make Reusable
+  function formatNumbers(input, type) {
+    if (input.length <= 0) {
+      return '';
+    }
+
+    switch(type) {
+      case 'addComma':
+        return Intl.NumberFormat(
+          'en-US', {
+            style: 'decimal',
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2
+          }).format(Number(input));
+      case 'removeComma':
+        return (input.length > 0)
+          ? Number(input.replace(/\,/g, ''))
+          : '';
     }
   }
 
@@ -84,9 +145,8 @@ export default function Donate() {
           <input type="text" className="form-control" id="inputCVC" title="Disabled, just a Test" disabled />
         </div>
         <div className="col-md-3">
-          {/* TODO: Give End-User ability to add an Amount :-) */}
           <label htmlFor="inputAmount" className="form-label fw-bold">Amount <small className="fw-normal">($ USD)</small></label>
-          <input type="text" className="form-control" id="inputAmount" disabled />
+          <input type="text" className="form-control" id="inputAmount" autoComplete={autoCompleteStatus} onBlur={amountBlur} onFocus={amountFocus} onKeyDown={numberInputOnly} />
         </div>
         <div className="col-md-9">
           {/* TODO: Sanitize Input */}

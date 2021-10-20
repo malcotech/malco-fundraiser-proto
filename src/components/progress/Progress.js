@@ -36,7 +36,7 @@ export default function Progress() {
   return (
     <div className="row align-items-center mt-3 mt-md-0">
       <div className="col-auto">
-        <p className="fw-bold m-0">Progress: </p>
+        <p className="fw-bold mb-1">Progress: </p>
       </div>
       <div className="col">
         <div className="progress progress--rounded sticky">
