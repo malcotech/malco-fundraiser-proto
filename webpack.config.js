@@ -39,5 +39,10 @@ module.exports = {
     },
     static: path.join(__dirname, 'public/'),
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  resolve: {
+    alias: {
+      Helpers: path.resolve(__dirname, 'src/helpers/')
+    }
+  }
 };
