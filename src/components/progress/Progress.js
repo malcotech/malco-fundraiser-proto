@@ -1,6 +1,9 @@
 import React from "react";
 import "./Progress.scss";
 
+// Helpers
+import { formatNumbers } from 'Helpers';
+
 // Redux
 import { useSelector } from 'react-redux';
 
@@ -10,7 +13,7 @@ const goal = 5000;
 export function ProgressGoal() {
   return (
     <div className="text-lg-center mt-sm-4 mt-md-0 mt-xl-4 mt-xxl-5">
-      <p className="fw-bold fs-4 mb-0">Goal: <span className="fs-2">${goal.toFixed(2)}</span></p>
+      <p className="fw-bold fs-4 mb-0">Goal: <span className="fs-2">${formatNumbers(goal, 'addComma')}</span></p>
     </div>
   )
 }
@@ -30,8 +33,8 @@ export default function Progress() {
     width: `${progressState}%`
   }
   const progressDisplay = (progressAmount >= goal)
-    ? '$' + `${progressAmount.toFixed(2)} ~ Goal Reached!`
-    : '$' + progressAmount.toFixed(2);
+    ? '$' + `${formatNumbers(progressAmount, 'addComma')} ~ Goal Reached!`
+    : '$' + formatNumbers(progressAmount, 'addComma');
 
   return (
     <div className="row align-items-center mt-3 mt-md-0">

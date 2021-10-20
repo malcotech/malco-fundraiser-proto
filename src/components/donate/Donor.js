@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Donor.scss";
+
+// Helpers
+import { formatNumbers } from 'Helpers';
 
 // Redux
 import { useDispatch } from 'react-redux';
@@ -96,27 +99,6 @@ export default function Donate() {
 
   function amountFocus(e) {
     e.currentTarget.value = formatNumbers(e.currentTarget.value, 'removeComma');
-  }
-
-  // TODO: Make Reusable
-  function formatNumbers(input, type) {
-    if (input.length <= 0) {
-      return '';
-    }
-
-    switch(type) {
-      case 'addComma':
-        return Intl.NumberFormat(
-          'en-US', {
-            style: 'decimal',
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2
-          }).format(Number(input));
-      case 'removeComma':
-        return (input.length > 0)
-          ? Number(input.replace(/\,/g, ''))
-          : '';
-    }
   }
 
   return (

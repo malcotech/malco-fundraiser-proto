@@ -4,7 +4,7 @@ import "./App.scss";
 
 // Components
 import Donate from "./components/donate/Donor";
-import Progress, { ProgressGoal } from "./components/progress/Progress";
+import { ProgressGoal } from "./components/progress/Progress";
 import Navigation from "./components/navigation/Navigation";
 import Supporter from "./components/supporter/Supporter";
 
