@@ -7,7 +7,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 // Components
 import Progress from "../progress/Progress";
 
-export default function Navigation() {
+export default function NavCampaign() {
   // TODO: Make this reusable so that the anchoring functionality is not only limited to the navigation.
   function anchorTo(e) {
     const target = e.currentTarget;

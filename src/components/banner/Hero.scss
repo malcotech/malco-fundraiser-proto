@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+.hero {
+  min-height: 450px;
+  background: gray;
+
+  .desc {
+    max-width: 100%;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 50%;
+    }
+  }
+}
