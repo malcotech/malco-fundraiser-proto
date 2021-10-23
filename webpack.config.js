@@ -31,9 +31,8 @@ module.exports = {
   },
   devtool : 'inline-source-map',
   devServer: {
-    // hot: true,
+    historyApiFallback: true,
     port: 3000,
-    // publicPath: 'http://localhost:3000/dist/'
     proxy: {
       '/dist': 'http://localhost:3000'
     },
@@ -42,6 +41,7 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   resolve: {
     alias: {
+      Components: path.resolve(__dirname, 'src/components/'),
       Helpers: path.resolve(__dirname, 'src/helpers/')
     }
   }
