@@ -12,7 +12,7 @@ import NavMain from "Components/navigation/NavMain";
 
 // Routes
 import Home from './routes/home/Home';
-import Campaign from './routes/campaign/Campaign';
+import Campaigns from './routes/campaigns/Campaigns';
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-        <Route path="/campaign">
-          <Campaign></Campaign>
+        <Route path="/campaigns">
+          <Campaigns></Campaigns>
         </Route>
         <Route path="*">
           <div className="w-100 text-center">

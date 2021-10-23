@@ -1,5 +1,5 @@
 import React from "react";
-import "./Campaign.scss";
+import "./Campaigns.scss";
 
 // Components
 import Donate from "Components/donate/Donor";
@@ -9,7 +9,7 @@ import Supporter from "Components/supporter/Supporter";
 
 const venue = 'The Mocha Cup'; // What is a cool name??
 
-export default function Home() {
+export default function Campaigns() {
   return (
     <main>
       {/* Banner Component */}

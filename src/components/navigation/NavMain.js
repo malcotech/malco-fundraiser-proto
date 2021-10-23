@@ -11,7 +11,7 @@ export default function NavMain() {
             <Link to="/" className="logo">Malco Funding</Link>
           </div>
           <div className="col-auto">
-            <Link to="/campaign">Campaigns</Link>
+            <Link to="/campaigns">Campaigns</Link>
           </div>
           <div className="col-auto ms-auto">
             {/* TODO: conditional button check if logged in, then go to either login or accounts page. */}
