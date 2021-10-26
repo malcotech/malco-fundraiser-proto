@@ -5,10 +5,11 @@ import "./Donor.scss";
 import { formatNumbers } from 'Helpers';
 
 // Redux
-import { useDispatch } from 'react-redux';
-import { addDoner } from './donorSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateFundDonors } from 'Routes/campaigns/campaignsSlice';
 
 export default function Donate() {
+  const id = useSelector((state) => state.funds.value.currentFundId);
   const delaySimulation = 1500;
   const dispatch = useDispatch();
   const autoCompleteStatus = (!!window.chrome) ? 'none' : 'off'; // autocomplete="off" has issues on Chrome, but any assigned value will?
@@ -52,10 +53,13 @@ export default function Donate() {
         loader.classList.add('d-flex');
 
         setTimeout(() => {
-          dispatch(addDoner({
-            name: `${firstName.value} ${lastName.value}`,
-            amount: validAmount,
-            message: message.value
+          dispatch(updateFundDonors({
+            id: id,
+            donor: {
+              name: `${firstName.value} ${lastName.value}`,
+              amount: validAmount,
+              message: message.value
+            }
           }));
 
           // Resets:

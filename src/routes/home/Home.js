@@ -4,6 +4,7 @@ import "./Home.scss";
 
 // Components
 import Hero from 'Components/banner/Hero';
+import FeaturedCampaigns from 'Components/campaigns/FeaturedCampaigns';
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
             <h2 className="mb-3">Bacon ipsum dolor amet shank chicken flank</h2>
             <p>corned beef picanha salami biltong tri-tip pork ham hock venison pancetta t-bone drumstick. Sirloin picanha landjaeger chuck.</p>
           </div>
-          <div className="col-sm-6 col-md">
+          <div className="col-md">
             <p className="h3">
                First Title
             </p>
@@ -23,7 +24,7 @@ export default function Home() {
               Chicken rump pork, ham sausage ham hock jerky tail fatback. Cupim doner meatloaf turducken ribeye chislic. Meatloaf porchetta bresaola ham chislic jowl pancetta chuck bacon short loin prosciutto spare ribs alcatra turducken..
             </p>
           </div>
-          <div className="col-sm-6 col-md">
+          <div className="col-md">
             <p className="h3">
               Second Title
             </p>
@@ -31,7 +32,7 @@ export default function Home() {
               Chicken rump pork, ham sausage ham hock jerky tail fatback. Cupim doner meatloaf turducken ribeye chislic. Meatloaf porchetta bresaola ham chislic jowl pancetta chuck bacon short loin prosciutto spare ribs alcatra turducken..
             </p>
           </div>
-          <div className="col-sm-6 col-md">
+          <div className="col-md">
             <p className="h3">
               Third Title
             </p>
@@ -47,47 +48,8 @@ export default function Home() {
             <div className="col-12">
               <h2 className="mb-4">Featured Campaigns</h2>
             </div>
-            <div className="col-4 mb-4">
-              <div className="card w-100">
-                <img className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div className="col-4 mb-4">
-              <div className="card w-100">
-                <img className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div className="col-4 mb-4">
-              <div className="card w-100">
-                <img className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div className="col-4 mb-4">
-              <div className="card w-100">
-                <img className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
           </div>
+          <FeaturedCampaigns />
         </div>
       </div>
       <div className="py-5">

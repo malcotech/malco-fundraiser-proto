@@ -8,8 +8,9 @@ import { formatNumbers } from 'Helpers';
 import { useSelector } from 'react-redux';
 
 export default function Supporter() {
-  const donorList = useSelector((state) => state.donor);
-  const showSupporters = donorList.value.map((donor, idx) => {
+  const id = useSelector((state) => state.funds.value.currentFundId);
+  const donorList = useSelector((state) => state.campaigns.value[id].donors);
+  const showSupporters = donorList.map((donor, idx) => {
     const amount = donor.amount.toFixed(2);
 
     return (
@@ -30,10 +31,8 @@ export default function Supporter() {
   });
 
   return (
-    <section>
-      <div className="row align-items-stretch">
-        {showSupporters}
-      </div>
+    <section className="row align-items-stretch">
+      {showSupporters}
     </section>
   )
 }

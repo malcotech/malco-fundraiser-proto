@@ -19,11 +19,12 @@ export function ProgressGoal() {
 }
 
 export default function Progress() {
-  const donorList = useSelector((state) => state.donor);
+  const id = useSelector((state) => state.funds.value.currentFundId);
+  const donorList = useSelector((state) => state.campaigns.value[id].donors);
   let progressAmount = 0;
   let progressState = 0;
 
-  donorList.value.map((donor) => {
+  donorList.map((donor) => {
     progressAmount += donor.amount;
   });
 

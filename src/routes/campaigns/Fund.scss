@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.anchor-section {
+  scroll-margin: 100px;
+
+  @include media-breakpoint-up(md) {
+    scroll-margin: 50px;
+  }
+}

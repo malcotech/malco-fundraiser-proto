@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // Reducers
-import donorReducer from '../components/donate/donorSlice';
+import campaignReducer from 'Routes/campaigns/campaignsSlice';
+import fundReducer from 'Routes/campaigns/fundSlice';
 
 export default configureStore({
   reducer: {
-    donor: donorReducer,
+    campaigns: campaignReducer,
+    funds: fundReducer,
   }
 })
