@@ -42,7 +42,8 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, 'src/components/'),
-      Helpers: path.resolve(__dirname, 'src/helpers/')
+      Helpers: path.resolve(__dirname, 'src/helpers/'),
+      Routes: path.resolve(__dirname, 'src/routes/')
     }
   }
 };
