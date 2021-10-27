@@ -9,6 +9,7 @@ import { saveFundId } from 'Routes/campaigns/fundSlice';
 
 // Components
 import Donate from "Components/donate/Donor";
+import Footer from 'Components/footer/Footer';
 import { ProgressGoal } from "Components/progress/Progress";
 import NavCampaign from "Components/navigation/NavCampaign";
 import Supporter from "Components/supporter/Supporter";
@@ -117,9 +118,7 @@ function renderFund(fund) {
           </div>
         </section>
       </section>
-      {/* <footer className="bg-gray-600 mt-5 py-4 py-md-5 text-center user-select-none">
-        <small><i><b>End of Page, thank you for checking out my page :-)</b></i></small>
-      </footer> */}
+      <Footer />
     </main>
   )
 }

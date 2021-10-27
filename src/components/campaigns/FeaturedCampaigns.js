@@ -11,7 +11,7 @@ export default function FeaturedCampaigns() {
     let link = `/campaigns/fund/${fundId}`;
 
     return (
-      <div className="col-sm-6 col-md-4 mb-4" key={idx}>
+      <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
         <div className="card w-100">
           <img src={fund.bannerImage.default} className="card-img-top" alt="..." />
           <div className="card-body">

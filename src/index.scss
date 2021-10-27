@@ -10,6 +10,7 @@
    Variables
    ========================================================================== */
 
+$gray: black;
 $gray: gray;
 $light-gray: lightgray;
 
@@ -23,8 +24,12 @@ $light-gray: lightgray;
   cursor: pointer;
 }
 
-.bg-light-gray {
-   background: rgba($light-gray, 1);
+/* Background Utilities
+   ========================================================================== */
+
+// TODO: Add bg-gray-(200|300 ... 900) on a need to basis.
+.bg-black-800 {
+  background: rgba($black, .8);
 }
 
 // TODO: Add bg-gray-(200|300 ... 900) on a need to basis.
@@ -36,4 +41,8 @@ $light-gray: lightgray;
 }
 .bg-gray-600 {
    background: rgba($gray, .6);
+}
+
+.bg-light-gray {
+  background: rgba($light-gray, 1);
 }

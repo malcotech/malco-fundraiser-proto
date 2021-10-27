@@ -13,7 +13,11 @@ export default function NavMain() {
           <div className="col-auto">
             <Link to="/campaigns">Campaigns</Link>
           </div>
-          <div className="col-auto ms-auto">
+          <div className="col-auto ms-auto" title="Intentionally Disabled">
+            {/* TODO: conditional button check if logged in, then go to either login or accounts page. */}
+            <Link to="/sign-in" className="btn btn-outline-primary btn-sm opacity-50 pe-none">Create Account</Link>
+          </div>
+          <div className="col-auto">
             {/* TODO: conditional button check if logged in, then go to either login or accounts page. */}
             <Link to="/sign-in" className="btn btn-sm btn-dark">Sign In</Link>
           </div>
