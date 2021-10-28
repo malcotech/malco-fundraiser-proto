@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-auto ms-lg-auto mt-2 mt-lg-0">
-            <small className="text-danger">("Malco's Fund" is a fictitious Company/Service used only for Demo Puposes in this project prototype.)</small>
+            <small className="text-danger">("Malco's Fund" is a fictitious Company/Service used only for Demo Purposes in this project prototype.)</small>
           </div>
         </div>
       </div>
