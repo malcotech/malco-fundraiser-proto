@@ -1,6 +1,7 @@
 // React
 import React from "react";
 import ReactDOM from "react-dom";
+import { CookiesProvider } from "react-cookie";
 
 // Redux
 import store from "./app/store.js";
@@ -13,8 +14,10 @@ import App from "./App.js";
 import "./index.scss";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <CookiesProvider>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </CookiesProvider>
   , document.getElementById("root")
 );

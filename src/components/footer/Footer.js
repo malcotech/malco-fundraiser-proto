@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -8,16 +7,16 @@ export default function Footer() {
         <div className="row">
           <div className="col-12 col-md mb-4 mb-md-0 text-center text-md-start">
             <h3>Malco's Fund</h3>
-            <span>&copy; 2021 Malco's Fund, LLC</span>
+            <p className="mb-1">&copy; 2021 Malco's Fund</p>
           </div>
-          <div className="col-6 col-sm-4 col-md-2 mt-3 mb-4 mt-md-0 mb-md-0 text-center text-md-end">
+          <div className="col-sm-4 col-md-2 mt-3 mb-4 mt-md-0 mb-md-0 text-center text-md-end">
             <p className="h6">Information</p>
             <div className="lh-lg">
               <a className="c-pointer d-block text-link">About Us</a>
               <a className="c-pointer d-block text-link">Contact</a>
             </div>
           </div>
-          <div className="col-6 col-sm-4 col-md-2 mt-3 mb-4 mt-md-0 mb-md-0 text-center text-md-end">
+          <div className="col-sm-4 col-md-2 mt-3 mb-4 mt-md-0 mb-md-0 text-center text-md-end">
             <p className="h6">Bacon ipsum</p>
             <div className="lh-lg">
               <a className="c-pointer d-block text-link">Dolor Amet Pork</a>
@@ -27,7 +26,7 @@ export default function Footer() {
               <a className="c-pointer d-block text-link">Turkey Porchetta</a>
             </div>
           </div>
-          <div className="col-6 col-sm-4 col-md-2 mt-3 mb-4 mt-md-0 mb-md-0 text-center text-md-end">
+          <div className="col-sm-4 col-md-2 mt-3 mb-4 mt-md-0 mb-md-0 text-center text-md-end">
             <p className="h6">Filet mignon</p>
             <div className="lh-lg">
               <a className="c-pointer d-block text-link">strip steak</a>
@@ -39,14 +38,21 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      <hr className="mt-4 mb-3" />
-      <div className="text-center text-md-start" title="Just Place Holder">
-        <span className="c-pointer me-3">Terms</span>
-        |
-        <span className="c-pointer mx-3">Privacy</span>
-        |
-        <span className="c-pointer mx-3">Legal</span>
-      </div>
+        <hr className="mt-4 mb-3" />
+        <div className="row justify-content-center justify-content-sm-start">
+          <div className="col-auto">
+            <div className="" title="Just Place Holder">
+              <span className="c-pointer me-3">Terms</span>
+              |
+              <span className="c-pointer mx-3">Privacy</span>
+              |
+              <span className="c-pointer mx-3">Legal</span>
+            </div>
+          </div>
+          <div className="col-auto ms-lg-auto mt-2 mt-lg-0">
+            <small className="text-danger">("Malco's Fund" is a fictitious Company/Service used only for Demo Puposes in this project prototype.)</small>
+          </div>
+        </div>
       </div>
     </footer>
   );

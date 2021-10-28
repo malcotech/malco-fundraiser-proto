@@ -4,6 +4,9 @@ import "./Donor.scss";
 // Helpers
 import { formatNumbers } from 'Helpers';
 
+// Components
+import SubmissionLoader from 'Components/progress/SubmissionLoader';
+
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { updateFundDonors } from 'Routes/campaigns/campaignsSlice';
@@ -50,7 +53,7 @@ export default function Donate() {
 
       if (!submit.disabled) {
         submit.disabled = true;
-        loader.classList.add('d-flex');
+        loader.style.opacity = 1;
 
         setTimeout(() => {
           dispatch(updateFundDonors({
@@ -67,7 +70,7 @@ export default function Donate() {
           lastName.value = '';
           amount.value = '';
           message.value = '';
-          loader.classList.remove('d-flex');
+          loader.style.opacity = 0;
           submit.disabled = false;
         }, delaySimulation);
       }
@@ -142,16 +145,15 @@ export default function Donate() {
         </div>
 
         <div className="col-12 text-center text-md-start mt-4">
-          <div className="row align-items-center">
+          <div className="row">
             <div className="col-auto">
               <button id="btn-submit" type="submit" className="btn btn-primary btn-lg mb-3 px-5 user-select-none">Submit</button>
             </div>
             {/* TODO: See how progress messages can be handled in React... */}
-            <div id="form-loader" className="col align-items-center">
-              <div>
-                <div className="spinner-border text-warning mr-3" role="status"></div>
+            <div className="col-12">
+              <div id="form-loader">
+                <SubmissionLoader />
               </div>
-              <i className="px-3">Simulating Submission...</i>
             </div>
             {/* TODO: Add a validation message, useful for mobile users. */}
           </div>
