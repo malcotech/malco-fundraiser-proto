@@ -5,3 +5,15 @@
 #form-loader {
   opacity: 0;
 }
+
+/* Chrome, Safari, Edge, Opera */
+#inputAmount::-webkit-outer-spin-button,
+#inputAmount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#inputAmount[type=number] {
+  -moz-appearance: textfield;
+}
