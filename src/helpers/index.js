@@ -5,12 +5,13 @@ export function formatNumbers(input, type) {
 
   switch(type) {
     case 'addComma':
+      const num = Number(input);
       return Intl.NumberFormat(
         'en-US', {
           style: 'decimal',
           maximumFractionDigits: 2,
           minimumFractionDigits: 2
-        }).format(Number(input));
+        }).format(num);
     case 'removeComma':
       return (input.length > 0)
         ? Number(input.replace(/\,/g, ''))

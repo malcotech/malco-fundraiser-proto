@@ -135,7 +135,7 @@ export default function Donate() {
         </div>
         <div className="col-md-3">
           <label htmlFor="inputAmount" className="form-label fw-bold">Amount <small className="fw-normal">($ USD)</small></label>
-          <input type="number" inputMode="numeric" className="form-control" id="inputAmount" autoComplete={autoCompleteStatus} onBlur={amountBlur} onFocus={amountFocus} onKeyDown={numberInputOnly} />
+          <input type="tel" className="form-control" id="inputAmount" autoComplete={autoCompleteStatus} onBlur={amountBlur} onFocus={amountFocus} onKeyDown={numberInputOnly} />
         </div>
         <div className="col-md-9">
           {/* TODO: Sanitize Input */}
