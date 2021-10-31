@@ -7,7 +7,7 @@ export const slice = createSlice({
       '001': {
         about: 'Bacon ipsum dolor amet pork belly ham hock tail filet mignon boudin ham andouille short ribs pork loin sausage flank buffalo frankfurter tongue. Pork chop beef corned beef prosciutto filet mignon. Tongue landjaeger shank, chislic pork ribeye buffalo beef ribs t-bone pancetta. Ball tip beef meatloaf pastrami capicola, cupim tail ground round brisket salami. Picanha ground round beef frankfurter capicola alcatra turkey short ribs meatloaf leberkas ham hock. Beef ribs t-bone pork belly beef flank biltong chicken buffalo pig cupim meatloaf pork chop. Ham hock beef ribs shoulder, kielbasa biltong shankle flank boudin burgdoggen prosciutto salami jerky landjaeger tail bresaola.',
         bannerImage: {
-          default: '/img/1060-5598x3732.jpg'
+          default: 'img/1060-5598x3732.jpg'
         },
         date: 'TBD',
         description: 'Hello friends! Well it is that time again for our annual coffee night fundraiser! Come join us at The Mocha Cup. Each beverage you purchase will go to our church fund. Can\'t make it? We also accept donations via form below.',

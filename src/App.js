@@ -21,7 +21,7 @@ import SignIn from "Routes/account/SignIn";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.REACT_APP_BASENAME}>
       <NavMain />
       <Switch>
         {/* Account */}

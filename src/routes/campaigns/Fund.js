@@ -75,7 +75,7 @@ function renderFund(fund) {
           <div className="row align-items-md-center">
             <div className="col-12 col-lg-6 px-0 px-sm-2">
               {/* Source: https://i.picsum.photos/id/1060/5598/3732.jpg */}
-              <img className="img-fluid" src={fund.bannerImage.default} alt={(fund.title) ? fund.title : ''} />
+              <img className="img-fluid" src={`${process.env.REACT_APP_BASENAME}${fund.bannerImage.default}`} alt={(fund.title) ? fund.title : ''} />
             </div>
             <div className="col-12 col-lg-6 px-0 px-sm-2">
               <div className="py-4 px-3 px-lg-4">
