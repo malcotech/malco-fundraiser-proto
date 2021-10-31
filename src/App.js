@@ -9,6 +9,9 @@ import { hot } from "react-hot-loader";
 import { useCookies } from 'react-cookie';
 import "./App.scss";
 
+// Helpers
+import { basename } from 'Helpers';
+
 // Components
 import NavMain from "Components/navigation/NavMain";
 
@@ -21,7 +24,7 @@ import SignIn from "Routes/account/SignIn";
 
 function App() {
   return (
-    <Router basename={process.env.REACT_APP_BASENAME}>
+    <Router basename={basename}>
       <NavMain />
       <Switch>
         {/* Account */}

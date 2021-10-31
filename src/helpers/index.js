@@ -1,3 +1,7 @@
+export const basename = (typeof process !== 'undefined' && process?.env?.REACT_APP_BASENAME)
+  ? process.env.REACT_APP_BASENAME
+  : '/';
+
 export function formatNumbers(input, type) {
   if (input.length <= 0) {
     return '';

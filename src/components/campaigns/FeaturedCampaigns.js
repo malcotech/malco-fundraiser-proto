@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+// Helpers
+import { basename } from 'Helpers';
+
 // Redux
 import { useSelector } from 'react-redux';
 
@@ -13,7 +16,7 @@ export default function FeaturedCampaigns() {
     return (
       <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
         <div className="card w-100">
-          <img src={`${process.env.REACT_APP_BASENAME}${fund.bannerImage.default}`} className="card-img-top" alt="..." />
+          <img src={`${basename}${fund.bannerImage.default}`} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{fund.title}</h5>
             <p className="card-text">{fund.description}</p>
